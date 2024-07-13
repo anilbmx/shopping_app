@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Express-Shopping-Cart</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body style="overflow:hidden;">
+  <div style="height: 100vh">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark special-color-dark">
+      <a class="navbar-brand" href="/">EXPRESS SHOPPING CART</a>
+      <ul class="navbar-nav nav-flex-icons float-right" style="right:0px;position:absolute;">
+        <!-- <li class="nav-item">
+          <a class="nav-link" id="user" onclick="SignupShow()">Login</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/shopping-cart">
+            <i class="fas fa-shopping-cart mr-1"></i>Cart
+            <span class="badge">
+              <% if(session.cart){ %>
+                <span>(<%= session.cart.totalQty %>)</span>
+              <% }else{%>
+                <span>(0)</span>
+              <% }%>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- <a class="nav-link" ><i class="fas fa-user mr-1"></i></a> -->
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user mr-1"></i>User Management
+          </a>
+          <div class="dropdown-menu">
+            <% if(login) {%>
+              <a class="dropdown-item" href="/user/profile">User Account</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/user/logut">Logut</a>
+            <% }else{ %>
+              <a class="dropdown-item" href="/user/signin">signin</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/user/signup">signup</a>
+            <% }%>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- login/register -->

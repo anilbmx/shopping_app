@@ -1,0 +1,43 @@
+</div>
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    // $('.carousel').carousel('pause')
+    var nav = $(".navbar").css("height");
+    $("#main_container").css("height","calc(100vh - "+nav+")");
+    $("#main_container").css("margin-top",nav);
+    function SignupShow() {
+      $("#register_modal").fadeToggle()
+    }
+    function showCart(id){
+      $(".active_cart").attr("class","inactive_cart");
+      $("#"+id).attr("class","active_cart");
+    }
+    function calctotal(){
+      // alert()
+      var total = 0;//Number($("#totalprice").innerText);
+      var ele = $(".price")
+      for (var i=0;i<ele.length;i++){
+        total+=Number(ele[i].innerText)
+        if(i==ele.length-1){
+          $("#totalprice").html(total);
+        }
+      }
+    }
+    function alterQty(e,qty,price){
+      e.parentNode.nextElementSibling.innerText = Number(qty)*Number(price);
+      // alert(this.value)
+      calctotal();
+    }
+
+  </script>
+</body>
+
+</html>

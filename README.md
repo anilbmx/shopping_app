@@ -1,7 +1,7 @@
 # shopping_app
 Node JS Shopping Cart app
 * to dupm data to mongodb
-	1.go to /seed directory in myapp
+	1.go to /seed directory
 	2.run "node product-seed.js"
 * link - http://localhost:3000
 	1.go to user management drop down

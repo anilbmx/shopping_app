@@ -1,0 +1,76 @@
+<%- include header.ejs %>
+  <div class="modal fade show" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-modal="true" style="display:block;padding-right: 17px;">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+
+        <!--Modal cascading tabs-->
+        <div class="modal-c-tabs">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+            <li class="nav-item waves-effect waves-light">
+              <a class="nav-link active" data-toggle="tab" href="#panel17" role="tab" aria-selected="true">
+                <i class="fas fa-user mr-1"></i> Sign In</a>
+            </li>
+            <!-- <li class="nav-item waves-effect waves-light">
+              <a class="nav-link" data-toggle="tab" href="#panel18" role="tab" aria-selected="false">
+                <i class="fas fa-user-plus mr-1"></i> Singn In</a>
+            </li> -->
+          </ul>
+
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 17-->
+            <div class="tab-pane fade in active show" id="panel17" role="tabpanel">
+
+              <!--Body-->
+              <!-- Validation Error -->
+              <% if (hasErrors) { %>
+                  <div class="alert alert-danger" role="alert">
+                      <%= messages %>
+                  </div>
+              <% } %>
+              <form action="/user/signin" method="post">
+              <div class="modal-body mb-1">
+                <div class="md-form form-sm">
+                  <i class="fas fa-envelope prefix"></i>
+                  <input type="text" id="form2" class="form-control form-control-sm" name="email" id="email">
+                  <label for="form2">Your email</label>
+                </div>
+
+                <div class="md-form form-sm">
+                  <i class="fas fa-lock prefix"></i>
+                  <input type="password" id="form3" class="form-control form-control-sm" name="password" id="password">
+                  <label for="form3">Your password</label>
+                </div>
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="text-center mt-4">
+                  <button class="btn btn-info waves-effect waves-light" type="submit">Sign In
+                    <i class="fas fa-sign-in ml-1"></i>
+                  </button>
+                </div>
+              </div>
+              <!--Footer-->
+              <div class="modal-footer">
+                <!-- <p>"<%= csrfToken %>"</p> -->
+                <!-- <div class="options text-center text-md-right mt-1">
+                  <p>Not a member?
+                    <a href="#" class="blue-text">Sign Up</a>
+                  </p>
+                  <p>Forgot
+                    <a href="#" class="blue-text">Password?</a>
+                  </p>
+                </div>
+                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal" onclick="SignupShow()">Close</button> -->
+              </div>
+            </form>
+            </div>
+
+        </div>
+      </div>
+      <!--/.Content-->
+    </div>
+  </div>
+  </div>
+<%- include footer.ejs %>
